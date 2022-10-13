@@ -15,5 +15,10 @@
 
 ## Running
 
-- dotnet compile
-- dotnet watch run 
+### Database
+- dotnet ef migrations add MigrationName # Create migration
+- dotnet ef database update # Apply migration
+
+### Development
+- dotnet compile # Check if everything is fine
+- dotnet watch run # Run and wait for updates
