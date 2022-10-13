@@ -1,5 +1,6 @@
 using web_system_csharp.Models;
 using web_system_csharp.Data;
+using web_system_csharp.Services;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -11,6 +12,8 @@ builder.Services.AddControllersWithViews();
 
 // Initialize seeding service
 builder.Services.AddScoped<SeedingService>();
+
+builder.Services.AddScoped<SellerService>();
 
 // Add MySql
 builder.Services.AddDbContext<SalesWebMvcContext>(options =>
