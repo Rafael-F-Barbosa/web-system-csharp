@@ -2,6 +2,9 @@ using web_system_csharp.Models;
 using web_system_csharp.Data;
 using web_system_csharp.Services;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,6 +28,16 @@ builder.Services.AddDbContext<SalesWebMvcContext>(options =>
 });
 
 var app = builder.Build();
+
+// Define localization options to format enUs
+var enUS = new CultureInfo("en-US");
+var localizationOptions = new RequestLocalizationOptions
+{
+    DefaultRequestCulture = new RequestCulture(enUS),
+    SupportedCultures = new List<CultureInfo> { enUS },
+    SupportedUICultures = new List<CultureInfo> { enUS }
+};
+app.UseRequestLocalization(localizationOptions);
 
 //Seed Data
 void SeedData(IHost app)
