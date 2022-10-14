@@ -13,7 +13,9 @@ builder.Services.AddControllersWithViews();
 // Initialize seeding service
 builder.Services.AddScoped<SeedingService>();
 
+// Inject entities dependencies
 builder.Services.AddScoped<SellerService>();
+builder.Services.AddScoped<DepartmentService>();
 
 // Add MySql
 builder.Services.AddDbContext<SalesWebMvcContext>(options =>

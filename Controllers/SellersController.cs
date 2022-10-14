@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using web_system_csharp.Services;
 using web_system_csharp.Models;
+using web_system_csharp.Models.ViewModels;
 
 
 namespace web_system_csharp.Controllers
@@ -12,10 +13,12 @@ namespace web_system_csharp.Controllers
     public class SellersController : Controller
     {
         private readonly SellerService _sellerService;
+        private readonly DepartmentService _departmentService;
 
-        public SellersController(SellerService sellerService)
+        public SellersController(SellerService sellerService, DepartmentService departmentService)
         {
             _sellerService = sellerService;
+            _departmentService = departmentService;
         }
         public IActionResult Index()
         {
@@ -26,8 +29,9 @@ namespace web_system_csharp.Controllers
 
         public IActionResult Create()
         {
-
-            return View();
+            var departments = _departmentService.FindAll();
+            var viewModel = new SellerFormViewModel{Departments = departments};
+            return View(viewModel);
         }
 
         [HttpPost]
