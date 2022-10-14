@@ -1,0 +1,50 @@
+@model web_system_csharp.Models.Seller
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Seller</h4>
+    <hr/>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name);
+        </dt>
+        <dl>
+            @Html.DisplayFor(model => model.Name);
+        </dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email);
+        </dt>
+        <dl>
+            @Html.DisplayFor(model => model.Email);
+        </dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDate);
+        </dt>
+        <dl>
+            @Html.DisplayFor(model => model.BirthDate);
+        </dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.BaseSalary);
+        </dt>
+        <dl>
+            @Html.DisplayFor(model => model.BaseSalary);
+        </dl>
+        <dt>
+            @Html.DisplayNameFor(model => model.Department);
+        </dt>
+        <dl>
+            @Html.DisplayFor(model => model.Department.Name);
+        </dl>
+    </dl>
+
+    <div>
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-secondary">Edit</a>
+        <a asp-action="Index" class="btn btn-primary">Back to List</a>
+    </div>
+
+</div>
