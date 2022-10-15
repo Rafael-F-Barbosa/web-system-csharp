@@ -1,6 +1,24 @@
 # Web sales system
 
+- It's is basically a MVC CRUD using dotnet and following good practices learned through the course. 
+- Entities created are departments, sellers that belongs to departments and sales records that belogs to sellers.
+- Code along course in reference, made adaptations to use dotnet 6.0 and EntitityFrameworkCore 3.0.
 - Made using C#, DOTNET, Entity Framework (Code-first aproach) and MySql.
+
+## Snapshots
+
+- Departments
+![List of departments](./img1.jpeg "Departments")
+
+- Sellers
+![List of sellers](./img3.jpeg "Sellers")
+
+- Update Sellers
+![Edit seller form](./img2.jpeg "Update Sellers")
+
+- Grouped search
+![Search sales records by departments](./img4.jpeg "Grouped search")
+
 
 ## References
 
