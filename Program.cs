@@ -19,6 +19,7 @@ builder.Services.AddScoped<SeedingService>();
 // Inject entities dependencies
 builder.Services.AddScoped<SellerService>();
 builder.Services.AddScoped<DepartmentService>();
+builder.Services.AddScoped<SalesRecordService>();
 
 // Add MySql
 builder.Services.AddDbContext<SalesWebMvcContext>(options =>
