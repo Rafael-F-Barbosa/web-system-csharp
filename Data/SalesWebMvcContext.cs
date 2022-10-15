@@ -19,5 +19,14 @@ namespace web_system_csharp.Models
 
         public DbSet<SalesRecord> SalesRecord { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            foreach (var foreignKey in modelBuilder.Model.GetEntityTypes()
+            .SelectMany(e => e.GetForeignKeys()))
+            {
+                foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
+            }
+        }
     }
 }
